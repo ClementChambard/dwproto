@@ -4,7 +4,7 @@
 #include <NSEngine.h>
 
 bool in(glm::vec3 const &coord_high, glm::vec3 const &coord_low) {
-  auto pos = PLAYER_PTR->collider.pos();
+  auto pos = Player::INSTANCE->collider.pos();
   if (pos.x > coord_high.x)
     return false;
   if (pos.y > coord_high.y)

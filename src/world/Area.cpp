@@ -30,8 +30,8 @@ void Area::on_tick() {
       auto eventer = RoomEvent{RoomEventKind::ROOM_LEFT, {}};
       m_current_room->fire_event(&evleft);
       m_current_room = m_active_transition->room_to;
-      PLAYER_PTR->collider.inc_pos_no_check(m_active_transition->destination -
-                                            m_active_transition->reference_pos);
+      Player::INSTANCE->collider.inc_pos_no_check(
+        m_active_transition->destination - m_active_transition->reference_pos);
       m_current_room->fire_event(&eventer);
       m_active_transition = nullptr;
       m_state = State::PLAYING;

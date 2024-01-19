@@ -25,6 +25,13 @@ public:
     m_state_timer = 0;
   }
 
+  bool cameraBoxes(glm::vec3 const &playerPos,
+                   std::vector<CameraBox *> *boxes) const {
+    if (m_current_room)
+      return m_current_room->cameraBoxes(playerPos, boxes);
+    return false;
+  }
+
 private:
   enum class State {
     PLAYING,

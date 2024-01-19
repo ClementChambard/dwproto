@@ -3,6 +3,8 @@
 
 #include "./RoomCollider.hpp"
 #include "./RoomObject.hpp"
+#include "./CameraBox.hpp"
+#include <glm/fwd.hpp>
 #include <vector>
 
 struct RoomTransition;
@@ -18,10 +20,13 @@ public:
 
   void fire_event(RoomEvent *ev);
 
+  bool cameraBoxes(glm::vec3 const& playerPos, std::vector<CameraBox*>* boxes);
+
 private:
   RoomCollider m_collider;
   std::vector<RoomObject *> m_objects;
   std::vector<RoomTransition> m_transitions;
+  std::vector<CameraBox> m_cameraboxes;
 };
 
 #endif // !ROOM_INCLUDED_H

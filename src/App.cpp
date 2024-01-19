@@ -1,5 +1,6 @@
 #include "./App.hpp"
 #include "./Player.hpp"
+#include "./Camera.hpp"
 #include "world/Area.hpp"
 #include <FrameBuffer.h>
 #include <GL/glew.h>
@@ -13,17 +14,19 @@ void App::on_create() {
   NSEngine::addGameLayer(true);
   (new Area())->testEnv();
   new Player();
+  new Camera();
 }
 
 void App::on_update() {
   // TODO: UPDATE_FUNC_REGISTRY System
   CURRENT_AREA->on_tick();
-  PLAYER_PTR->on_tick_debug();
+  Player::INSTANCE->on_tick_debug();
+  Camera::INSTANCE->on_tick();
 }
 
 void App::on_render() {
   CURRENT_AREA->on_draw();
-  PLAYER_PTR->on_draw_debug();
+  Player::INSTANCE->on_draw_debug();
 }
 
 void App::on_destroy() {}
