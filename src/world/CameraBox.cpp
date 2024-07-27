@@ -88,21 +88,21 @@ void CameraBox::on_draw_debug() {
     flags.active = !flags.active;
   }
 
-  auto x1 = coords_low.x;
-  auto y1 = coords_low.y;
-  auto z1 = coords_low.z;
-  auto x2 = coords_high.x;
-  auto y2 = coords_high.y;
-  auto z2 = coords_high.z;
-  auto col = c_blue;
-  if (flags.usedThisFrame)
-    col = c_red;
-  NSEngine::draw_quad_color({x1, y1, z1}, {x2, y1, z1}, {x2, y2, z1},
-                            {x1, y2, z1}, col, col, col, col, true);
-  NSEngine::draw_quad_color({x1, y1, z2}, {x2, y1, z2}, {x2, y2, z2},
-                            {x1, y2, z2}, col, col, col, col, true);
-  NSEngine::draw_line_color_3d(x1, y1, z1, x1, y1, z2, 1, col, col);
-  NSEngine::draw_line_color_3d(x2, y1, z1, x2, y1, z2, 1, col, col);
-  NSEngine::draw_line_color_3d(x2, y2, z1, x2, y2, z2, 1, col, col);
-  NSEngine::draw_line_color_3d(x1, y2, z1, x1, y2, z2, 1, col, col);
+  // auto x1 = coords_low.x;
+  // auto y1 = coords_low.y;
+  // auto z1 = coords_low.z;
+  // auto x2 = coords_high.x;
+  // auto y2 = coords_high.y;
+  // auto z2 = coords_high.z;
+  // auto col = c_blue;
+  // if (flags.usedThisFrame)
+  //   col = c_red;
+  // NSEngine::draw_quad_color({x1, y1, z1}, {x2, y1, z1}, {x2, y2, z1},
+  //                           {x1, y2, z1}, col, col, col, col, true);
+  // NSEngine::draw_quad_color({x1, y1, z2}, {x2, y1, z2}, {x2, y2, z2},
+  //                           {x1, y2, z2}, col, col, col, col, true);
+  // NSEngine::draw_line_color_3d(x1, y1, z1, x1, y1, z2, 1, col, col);
+  // NSEngine::draw_line_color_3d(x2, y1, z1, x2, y1, z2, 1, col, col);
+  // NSEngine::draw_line_color_3d(x2, y2, z1, x2, y2, z2, 1, col, col);
+  // NSEngine::draw_line_color_3d(x1, y2, z1, x1, y2, z2, 1, col, col);
 }

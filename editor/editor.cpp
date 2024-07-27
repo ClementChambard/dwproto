@@ -46,6 +46,8 @@ Editor::~Editor() {
 }
 
 void Editor::on_tick() {
+  controllers.onTick();
+
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplSDL2_NewFrame();
   ImGui::NewFrame();
@@ -90,8 +92,11 @@ void Editor::on_tick() {
   ImGui::End();
 }
 void Editor::on_draw() {
+  controllers.onDraw();
+
   // draw planes and walls here
   rc.debug_draw();
+  NSEngine::draw_set_layer(0);
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

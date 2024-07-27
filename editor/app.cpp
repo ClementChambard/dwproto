@@ -4,6 +4,7 @@
 void App::on_create() {
   setMaxFps(60);
   NSEngine::createCamera(NS_CAM_3D, WINDOW_WIDTH, WINDOW_HEIGHT);
+  NSEngine::addGameLayer(true);
   editor.init();
 }
 
